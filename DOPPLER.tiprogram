@@ -1,0 +1,25 @@
+Menu("DOPPLER SOLVER","SOURCE APPROACHING",A,"SOURCE RETREATING",B
+Lbl A
+1→Y
+Goto C
+
+Lbl B
+2→Y
+Goto C
+
+Lbl C
+Input "FREQUENCY OF SOURCE : ",F
+Input "VELOCITY OF WAVE : ",V
+Input "VELOCITY OF SOURCE : ",W
+If Y=1
+Then
+((V/(V-W))*F)→R
+Goto D
+Else
+((V/(V+W))*F)→R
+Goto D
+End
+Lbl D
+Disp "OBSERVED FREQUENCY : "
+Disp R
+Pause 
